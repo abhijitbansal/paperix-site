@@ -1,9 +1,9 @@
-# SnapDoc — marketing & legal site
+# Paperix — marketing & legal site
 
-Static site for [snapdoc.app](https://snapdoc.app) (when DNS is live).
+Static site for [paperix.app](https://paperix.app) (when DNS is live).
 
 For now, the assumption is that this gets hosted on **GitHub Pages from a
-separate public repo** (because the SnapDoc code repo stays private, and
+separate public repo** (because the Paperix code repo stays private, and
 free-tier Pages requires a public repo).
 
 ## Files
@@ -25,15 +25,15 @@ JavaScript, no Jekyll, no Hugo. Works on any static host.
 
 ## First-time setup
 
-1. **Create an empty public repo** on GitHub. Suggested name: `snapdoc-site`.
+1. **Create an empty public repo** on GitHub. Suggested name: `paperix-site`.
    No README, no license, no `.gitignore` from the template (we'll push our
    own content).
    - Web UI: github.com/new → set Public → leave templates unchecked
-   - or: `gh repo create <your-user>/snapdoc-site --public --confirm`
+   - or: `gh repo create <your-user>/paperix-site --public --confirm`
 
 2. **Tell the deploy script where to push.** From the repo root:
    ```bash
-   echo 'git@github.com:<your-user>/snapdoc-site.git' > .site-remote
+   echo 'git@github.com:<your-user>/paperix-site.git' > .site-remote
    ```
    `.site-remote` is already in `.gitignore` so it won't end up in either
    repo. You can also pass `SITE_REMOTE=…` as an env var if you prefer.
@@ -44,13 +44,13 @@ JavaScript, no Jekyll, no Hugo. Works on any static host.
    - Branch: `main`, folder: `/ (root)`
    - First publish takes ~1 minute and the URL appears on the same page
 
-The published URL will be `https://<your-user>.github.io/snapdoc-site/` —
+The published URL will be `https://<your-user>.github.io/paperix-site/` —
 that's the placeholder URL to put in App Store Connect's Privacy/Support
 fields, until you point a custom domain at it.
 
 ## Custom domain (later)
 
-When you have `snapdoc.app` (or whatever) set up:
+When you have `paperix.app` (or whatever) set up:
 
 1. Add a `CNAME` file at the root of the public repo containing the domain
    (one line, no http://).
