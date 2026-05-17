@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnapDoc — Private offline document scanner for iPhone</title>
+  <meta name="description" content="SnapDoc is a private, offline document scanner for iPhone and iPad. Scan to searchable PDFs without any data leaving your device.">
+  <meta property="og:title" content="SnapDoc — Private offline document scanner">
+  <meta property="og:description" content="Scan to searchable PDFs. Nothing leaves your phone. No accounts, no cloud, no tracking.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site">
+    <img src="assets/app-icon-64.png" alt="">
+    <span class="name">SnapDoc</span>
+    <nav>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="icon" src="assets/app-icon-512.png" alt="SnapDoc app icon">
+      <h1>Scan documents. <br>Without the spyware.</h1>
+      <p class="tagline">
+        SnapDoc turns paper into searchable PDFs on your iPhone — and it does
+        every step of it on-device. No accounts, no cloud, no analytics, no
+        tracking.
+      </p>
+      <a class="cta" href="#features">See what it does</a>
+    </section>
+
+    <hr>
+
+    <section id="features">
+      <h2>What it does</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Edge-aware scanning</h3>
+          <p>Uses Apple's Vision document camera — the same engine Notes.app uses. Auto-edge detection, perspective correction, shadow cleanup.</p>
+        </div>
+        <div class="feature">
+          <h3>On-device OCR</h3>
+          <p>Every scan runs through on-device text recognition. The recognized text is embedded as an invisible layer in the PDF, so it's searchable in any reader.</p>
+        </div>
+        <div class="feature">
+          <h3>Full-text search</h3>
+          <p>Search across every scan, or inside a single document. By name or by content — anything you've ever scanned, instantly findable.</p>
+        </div>
+        <div class="feature">
+          <h3>Page editor</h3>
+          <p>Reorder, rotate, or delete pages after the fact. Drag to reorder; swipe for actions. Saves back to the original PDF in place.</p>
+        </div>
+        <div class="feature">
+          <h3>Password-protected export</h3>
+          <p>Sharing a sensitive scan? Export with a password using PDFKit's built-in encryption. Works in every standard PDF reader.</p>
+        </div>
+        <div class="feature">
+          <h3>Zero networking</h3>
+          <p>The binary literally has no code to phone home. Turn airplane mode on forever and SnapDoc works exactly the same. We're not "encrypted in transit" — we're <em>no transit</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Why no SDKs?</h2>
+      <p>
+        Most "free" scanner apps make money by sending your scans, your text,
+        your behavior, or your contacts somewhere. The business model is:
+        you upload your tax documents and someone downstream gets paid.
+      </p>
+      <p>
+        SnapDoc takes a different approach. It costs a few dollars one-time,
+        it has no servers, and it has no third-party SDKs — not analytics,
+        not crash reporters, not advertising IDs. The binary you install is
+        the binary that runs. There is no live wire back to anyone.
+      </p>
+      <p class="muted small">
+        This is the kind of thing that's easy to claim and hard to prove.
+        You can verify it by running SnapDoc with Little Snitch or Lulu
+        in alert mode — it will never prompt, because it never tries.
+      </p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Get SnapDoc</h2>
+      <p>
+        Coming soon to the App Store. In the meantime, the source is on
+        <a href="https://github.com/abhijitbansal/doc-scan">GitHub</a>
+        (with a free Apple ID you can build and run it on your own iPhone
+        today).
+      </p>
+    </section>
+  </main>
+
+  <footer class="site">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <br>
+    <span class="small">© 2026 Abhijit Bansal</span>
+  </footer>
+</body>
+</html>
