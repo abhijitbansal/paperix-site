@@ -25,28 +25,31 @@ JavaScript, no Jekyll, no Hugo. Works on any static host.
 
 ## First-time setup
 
-1. **Create an empty public repo** on GitHub. Suggested name: `paperix-site`.
-   No README, no license, no `.gitignore` from the template (we'll push our
-   own content).
-   - Web UI: github.com/new → set Public → leave templates unchecked
-   - or: `gh repo create <your-user>/paperix-site --public --confirm`
+The deploy script is hardcoded to push to
+`git@github.com:abhijitbansal/paperix-site.git`. If that's you, skip to
+step 3. Forks or other contributors: set `SITE_REMOTE=…` in the
+environment, or write a different URL to `.site-remote` (gitignored).
 
-2. **Tell the deploy script where to push.** From the repo root:
+1. **Create the public repo** on GitHub:
    ```bash
-   echo 'git@github.com:<your-user>/paperix-site.git' > .site-remote
+   gh repo create abhijitbansal/paperix-site --public --confirm
    ```
-   `.site-remote` is already in `.gitignore` so it won't end up in either
-   repo. You can also pass `SITE_REMOTE=…` as an env var if you prefer.
+   No README, no license, no `.gitignore` from the template.
 
-3. **Enable GitHub Pages** on the new repo:
+2. **Enable GitHub Pages** on the new repo:
    - Repo → Settings → Pages
    - Source: "Deploy from a branch"
    - Branch: `main`, folder: `/ (root)`
    - First publish takes ~1 minute and the URL appears on the same page
 
-The published URL will be `https://<your-user>.github.io/paperix-site/` —
-that's the placeholder URL to put in App Store Connect's Privacy/Support
-fields, until you point a custom domain at it.
+3. **First deploy:**
+   ```bash
+   ./scripts/deploy-site.sh
+   ```
+
+The published URL is `https://abhijitbansal.github.io/paperix-site/` —
+that's the placeholder URL in App Store Connect's Privacy/Support
+fields until a custom domain is pointed at it.
 
 ## Custom domain (later)
 
@@ -62,13 +65,20 @@ When you have `paperix.app` (or whatever) set up:
 ## Deploying changes
 
 ```bash
-# Make changes in site/, commit them to the doc-scan repo as usual.
+# Refresh icon + OG image from the current app icon generator. Idempotent;
+# safe to run anytime. If pixels changed, commit the result.
+./scripts/refresh-site-assets.sh
+
+# Make any HTML/CSS edits in site/, commit them to the doc-scan repo as usual.
 git add site/
 git commit -m "site: tweak privacy policy wording"
 
 # Push the site/ subtree to the public repo:
 ./scripts/deploy-site.sh
 ```
+
+The release skill's stage 11 wires these together automatically on every
+`release appstore` run, so you rarely need to invoke them by hand.
 
 The deploy script uses `git subtree split` + `git push --force`. Force-push
 is intentional — the public site repo is a derivative, not a primary
