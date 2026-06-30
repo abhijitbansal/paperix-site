@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — Paperix</title>
   <meta name="description" content="Paperix's privacy policy. The short version: Paperix collects nothing.">
-  <meta name="theme-color" content="#2477ee">
+  <meta name="theme-color" content="#f4efe6">
 
   <!-- iOS Smart App Banner: native install banner shown only in Safari on iPhone/iPad. -->
   <meta name="apple-itunes-app" content="app-id=6770402925">
@@ -19,123 +19,124 @@
   <meta property="og:description" content="Paperix collects nothing. No network code, no accounts, no analytics, no tracking. Everything stays on your device.">
   <meta property="og:url" content="https://abhijitbansal.github.io/paperix-site/privacy.html">
   <meta property="og:image" content="https://abhijitbansal.github.io/paperix-site/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Paperix — private, on-device document scanner for iPhone and iPad.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Privacy Policy — Paperix">
-  <meta name="twitter:description" content="Paperix collects nothing. No network code, no accounts, no analytics, no tracking. Everything stays on your device.">
   <meta name="twitter:image" content="https://abhijitbansal.github.io/paperix-site/assets/og-image.png">
 
   <link rel="icon" type="image/png" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; form-action 'none'; base-uri 'self'">
 </head>
 <body>
-  <header class="site">
+<div class="wrap">
+
+  <nav class="site">
     <img src="assets/app-icon-64.png" alt="">
     <span class="name">Paperix</span>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="privacy.html" aria-current="page">Privacy</a>
-      <a href="support.html">Support</a>
-    </nav>
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="privacy.html" aria-current="page">Privacy</a>
+    <a href="support.html">Support</a>
+  </nav>
+
+  <header class="page">
+    <div class="kicker">Paperix · privacy</div>
+    <h1>Privacy Policy</h1>
+    <p class="mono">Last updated: 20 May 2026</p>
   </header>
 
-  <main>
-    <h1>Privacy Policy</h1>
-    <p class="muted small">Last updated: 20 May 2026</p>
-
-    <p class="lead">
+  <main class="prose">
+    <p class="lede">
       Paperix is a document-scanning app for iPhone and iPad. This page
-      describes what data Paperix handles and what it does with it. The
-      short version: it doesn't handle any of your data anywhere outside
-      your device.
+      describes what data Paperix handles and what it does with it. The short
+      version: it doesn't handle any of your data anywhere outside your device.
     </p>
 
-    <h2>What Paperix collects</h2>
+    <h2>What Paperix collects</h2><div class="rule"></div>
     <p>
-      <strong>Nothing.</strong> Paperix has no network code, no accounts,
-      no analytics, no crash-reporting SDK, and no advertising identifiers.
-      The compiled application binary does not contain code that can
-      transmit data over the internet.
+      <strong>Nothing.</strong> Paperix has no network code, no accounts, no
+      analytics, no crash-reporting SDK, and no advertising identifiers. The
+      compiled application binary does not contain code that can transmit data
+      over the internet.
     </p>
 
-    <h2>Where your scans live</h2>
+    <h2>Where your scans live</h2><div class="rule"></div>
     <p>
-      Scans are saved as PDF files in the app's Documents folder on your
-      device. They are not synced, uploaded, or transmitted anywhere by
-      Paperix. If you choose to share a scan via the iOS share sheet — to
-      Mail, Messages, AirDrop, Files, iCloud Drive, or any other
-      destination — that destination's privacy policy governs what happens
-      to the file from that point forward.
+      Scans are saved as PDF files in the app's Documents folder on your device.
+      They are not synced, uploaded, or transmitted anywhere by Paperix. If you
+      choose to share a scan via the iOS share sheet — to Mail, Messages,
+      AirDrop, Files, iCloud Drive, or any other destination — that
+      destination's privacy policy governs what happens to the file from that
+      point forward.
     </p>
     <p>
-      If you have iCloud Backup enabled at the system level, your scans may
-      be included in your encrypted iCloud Backup. That is governed by
-      Apple's privacy policy, not ours.
-    </p>
-
-    <h2>Camera and photo access</h2>
-    <p>
-      Paperix requests camera access to capture documents. The camera
-      permission is used only while you are actively scanning, and frames
-      are processed on-device by Apple's Vision framework.
-    </p>
-    <p>
-      Paperix may request "Add to Photos" permission when you choose to
-      save a PDF to your Photo Library. Paperix does not request "Read
-      Photos" access — it never reads your photo library.
+      If you have iCloud Backup enabled at the system level, your scans may be
+      included in your encrypted iCloud Backup. That is governed by Apple's
+      privacy policy, not ours.
     </p>
 
-    <h2>On-device text recognition</h2>
+    <h2>Camera and photo access</h2><div class="rule"></div>
+    <p>
+      Paperix requests camera access to capture documents. The camera permission
+      is used only while you are actively scanning, and frames are processed
+      on-device by Apple's Vision framework.
+    </p>
+    <p>
+      Paperix may request "Add to Photos" permission when you choose to save a
+      PDF to your Photo Library. Paperix does not request "Read Photos" access —
+      it never reads your photo library.
+    </p>
+
+    <h2>On-device text recognition</h2><div class="rule"></div>
     <p>
       After each scan, Paperix runs Apple's on-device text recognition
-      (<code>VNRecognizeTextRequest</code>) so the resulting PDFs are
-      searchable. The recognized text is embedded inside the PDF file as
-      an invisible text layer and is stored only with the PDF. No text is
-      transmitted anywhere.
+      (<code>VNRecognizeTextRequest</code>) so the resulting PDFs are searchable.
+      The recognized text is embedded inside the PDF file as an invisible text
+      layer and is stored only with the PDF. No text is transmitted anywhere.
     </p>
 
-    <h2>On-device AI (Analyze and Ask Paperix)</h2>
+    <h2>On-device AI (Analyze and Ask Paperix)</h2><div class="rule"></div>
     <p>
-      Paperix offers AI features — summarization, key points, follow-up
-      questions about a document, and a cross-document "Ask Paperix"
-      surface that returns answers with citations. <strong>Every step runs
-      on your device</strong> using Apple's Foundation Models framework
-      (large language model) and the Natural Language framework
-      (embeddings). Both execute on the Neural Engine. No document
-      content, embedding, query, or model output is transmitted off the
-      device, ever.
+      Paperix offers AI features — summarization, key points, follow-up questions
+      about a document, and a cross-document "Ask Paperix" surface that returns
+      answers with citations. <strong>Every step runs on your device</strong>
+      using Apple's Foundation Models framework (large language model) and the
+      Natural Language framework (embeddings). Both execute on the Neural Engine.
+      No document content, embedding, query, or model output is transmitted off
+      the device, ever.
     </p>
     <p>
-      Paperix maintains a small index of embedding vectors for your
-      documents inside the app's Documents folder so questions can be
-      answered quickly without re-processing every scan on every launch.
-      This index is local-only and lives next to your scans.
+      Paperix maintains a small index of embedding vectors for your documents
+      inside the app's Documents folder so questions can be answered quickly
+      without re-processing every scan on every launch. This index is local-only
+      and lives next to your scans.
     </p>
     <p>
-      AI features require Apple Intelligence, which is supported on
-      iPhone 15 Pro and later, and on iPad with M-series chips. On older
-      devices the AI features are simply hidden and the rest of Paperix
-      works the same.
+      AI features require Apple Intelligence, which is supported on iPhone 15 Pro
+      and later, and on iPad with M-series chips. On older devices the AI
+      features are simply hidden and the rest of Paperix works the same.
     </p>
 
-    <h2>Children</h2>
+    <h2>Children</h2><div class="rule"></div>
     <p>
-      Paperix is rated 4+. It does not collect any information from anyone,
-      so it does not collect information from children either.
+      Paperix is rated 4+. It does not collect any information from anyone, so it
+      does not collect information from children either.
     </p>
 
-    <h2>Changes</h2>
+    <h2>Changes</h2><div class="rule"></div>
     <p>
-      If a future version of Paperix ever adds a feature that requires
-      network access (for example, optional iCloud sync), this policy will
-      be updated and the App Store listing will say so clearly. Existing
-      local data will remain local unless you opt in.
+      If a future version of Paperix ever adds a feature that requires network
+      access (for example, optional iCloud sync), this policy will be updated and
+      the App Store listing will say so clearly. Existing local data will remain
+      local unless you opt in.
     </p>
 
-    <h2>Contact</h2>
+    <h2>Contact</h2><div class="rule"></div>
     <p>
       Questions about privacy can be sent to
       <a href="mailto:contact@abhijitbansal.com">contact@abhijitbansal.com</a>.
@@ -143,11 +144,10 @@
   </main>
 
   <footer class="site">
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="support.html">Support</a>
-    <br>
-    <span class="small">© 2026 Abhijit Bansal</span>
+    <span><a href="index.html">Home</a> · <a href="features.html">Features</a> · <a href="support.html">Support</a></span>
+    <span>© 2026 Abhijit Bansal</span>
   </footer>
+
+</div>
 </body>
 </html>

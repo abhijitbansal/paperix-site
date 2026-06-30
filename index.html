@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Paperix — Private offline document scanner for iPhone</title>
-  <meta name="description" content="Paperix is a private, on-device document scanner for iPhone. Scan to searchable PDFs and ask AI questions about them — all on your device. No cloud, no accounts, no tracking.">
-  <meta name="theme-color" content="#2477ee">
+  <meta name="description" content="Paperix is a private, on-device document scanner for iPhone and iPad. Scan to searchable PDFs, then summarize any scan or ask questions across your whole library — every step on your device. No cloud, no accounts, no tracking.">
+  <meta name="theme-color" content="#f4efe6">
 
   <!-- iOS Smart App Banner: native "install" banner shown only in Safari on iPhone/iPad. -->
   <meta name="apple-itunes-app" content="app-id=6770402925">
@@ -18,139 +18,188 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Paperix">
   <meta property="og:title" content="Paperix — Private AI document scanner">
-  <meta property="og:description" content="Scan to searchable PDFs and ask AI questions about them — all on your iPhone. Nothing leaves your device.">
+  <meta property="og:description" content="Scan to searchable PDFs, then summarize any scan or ask questions across your whole library — all on your iPhone. Nothing leaves your device.">
   <meta property="og:url" content="https://abhijitbansal.github.io/paperix-site/">
   <meta property="og:image" content="https://abhijitbansal.github.io/paperix-site/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Paperix — private, on-device document scanner for iPhone and iPad.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Paperix — Private AI document scanner">
-  <meta name="twitter:description" content="Scan to searchable PDFs and ask AI questions about them — all on your iPhone. Nothing leaves your device.">
+  <meta name="twitter:description" content="Scan to searchable PDFs, then summarize any scan or ask questions across your whole library — all on your iPhone. Nothing leaves your device.">
   <meta name="twitter:image" content="https://abhijitbansal.github.io/paperix-site/assets/og-image.png">
 
   <link rel="icon" type="image/png" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; form-action 'none'; base-uri 'self'">
 </head>
 <body>
-  <header class="site">
+<div class="wrap">
+
+  <nav class="site">
     <img src="assets/app-icon-64.png" alt="">
     <span class="name">Paperix</span>
-    <nav>
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="support.html">Support</a>
-    </nav>
-  </header>
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="features.html">Features</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+  </nav>
 
   <main>
-    <section class="hero">
-      <img class="icon" src="assets/app-icon-512.png" alt="Paperix app icon">
-      <h1>Scan, summarize, and ask. <br>All on your iPhone.</h1>
-      <p class="tagline">
-        Paperix turns paper into searchable PDFs, then lets you summarize
-        any scan or ask questions across your whole library — every step of
-        it on-device. No accounts, no cloud, no analytics, no tracking.
-      </p>
-      <div class="cta-row">
-        <a class="appstore-badge" href="https://apps.apple.com/app/id6770402925" aria-label="Download Paperix on the App Store">
-          <svg class="apple-logo" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-          <span class="appstore-badge-text"><small>Download on the</small>App&nbsp;Store</span>
-        </a>
-        <a class="cta secondary" href="#features">See what it does</a>
-      </div>
-    </section>
-
-    <hr>
-
-    <section id="features">
-      <h2>What it does</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>Edge-aware scanning</h3>
-          <p>Uses Apple's Vision document camera — the same engine Notes.app uses. Auto-edge detection, perspective correction, shadow cleanup.</p>
+    <header class="page">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="ondevice">On device</span>
+          <div class="kicker">Paperix · for iPhone &amp; iPad</div>
+          <h1>Scan, search,<br>and <em>ask</em>.</h1>
+          <p class="lead">
+            Paperix turns paper into searchable PDFs, then lets you summarize
+            any scan or ask questions across your whole library — <b>every step
+            on your device.</b> No accounts, no cloud, no analytics, no tracking.
+          </p>
+          <div class="cta-row">
+            <a class="appstore-badge" href="https://apps.apple.com/app/id6770402925" aria-label="Download Paperix on the App Store">
+              <svg class="apple-logo" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <span class="appstore-badge-text"><small>Download on the</small>App&nbsp;Store</span>
+            </a>
+            <a class="cta-quiet" href="features.html">See every feature →</a>
+          </div>
         </div>
-        <div class="feature">
-          <h3>On-device OCR</h3>
-          <p>Every scan runs through on-device text recognition. The recognized text is embedded as an invisible layer in the PDF, so it's searchable in any reader.</p>
-        </div>
-        <div class="feature">
-          <h3>Full-text search</h3>
-          <p>Search across every scan, or inside a single document. By name or by content — anything you've ever scanned, instantly findable. Tap a result to jump to that page with the match highlighted.</p>
-        </div>
-        <div class="feature">
-          <h3>Analyze with on-device AI</h3>
-          <p>Open any scan and get an AI-generated summary, key points, and a follow-up Q&amp;A — all powered by Apple Intelligence running on your iPhone's Neural Engine. Streams in seconds. Nothing is transmitted.</p>
-        </div>
-        <div class="feature">
-          <h3>Ask across your library</h3>
-          <p>Ask a question in plain language and get a synthesized answer pulled from every scan you have, with tappable citations back to the source page. Built on an on-device embedding index that ranks by meaning, not just keyword overlap.</p>
-        </div>
-        <div class="feature">
-          <h3>Page editor</h3>
-          <p>Reorder, rotate, or delete pages after the fact. Drag to reorder; swipe for actions. Saves back to the original PDF in place.</p>
-        </div>
-        <div class="feature">
-          <h3>Password-protected export</h3>
-          <p>Sharing a sensitive scan? Export with a password using PDFKit's built-in encryption. Works in every standard PDF reader.</p>
-        </div>
-        <div class="feature">
-          <h3>Zero networking</h3>
-          <p>The binary literally has no code to phone home. Turn airplane mode on forever and Paperix works exactly the same. We're not "encrypted in transit" — we're <em>no transit</em>.</p>
+        <div class="hero-art">
+          <div class="device"><img src="assets/shots/library.png" alt="Paperix library — a list of scanned documents with OCR badges, dates, and sizes" width="402" height="874"></div>
         </div>
       </div>
-    </section>
+    </header>
 
-    <hr>
+    <h2>See it work</h2><div class="rule"></div>
+    <div class="demorow">
+      <figure class="demo-fig">
+        <div class="device"><img src="assets/demo/browse.gif" alt="Browsing the Paperix library and opening a scanned lease to read it" width="402" height="874" loading="lazy"></div>
+        <figcaption>Open a scan — it renders on warm paper, fully readable.</figcaption>
+      </figure>
+      <figure class="demo-fig">
+        <div class="device"><img src="assets/demo/search.gif" alt="Typing a query and seeing matches highlighted across every scan" width="402" height="874" loading="lazy"></div>
+        <figcaption>Type a word — <b>every matching scan, instantly.</b></figcaption>
+      </figure>
+      <figure class="demo-fig">
+        <div class="device"><img src="assets/demo/ai.gif" alt="On-device AI summarizing a document and extracting key points" width="402" height="874" loading="lazy"></div>
+        <figcaption>Summary and key points — <b>on the Neural Engine.</b></figcaption>
+      </figure>
+    </div>
+    <p class="gifnote">recorded on the iPhone&nbsp;17&nbsp;Pro simulator with seeded scans — capture itself uses the device camera</p>
 
-    <section>
-      <h2>Why no SDKs?</h2>
-      <p>
-        Most "free" scanner apps make money by sending your scans, your text,
-        your behavior, or your contacts somewhere. The business model is:
-        you upload your tax documents and someone downstream gets paid.
-      </p>
-      <p>
-        Paperix takes a different approach. It costs a few dollars one-time,
-        it has no servers, and it has no third-party SDKs — not analytics,
-        not crash reporters, not advertising IDs. The binary you install is
-        the binary that runs. There is no live wire back to anyone.
-      </p>
-      <p class="muted small">
-        This is the kind of thing that's easy to claim and hard to prove.
-        You can verify it by running Paperix with Little Snitch or Lulu
-        in alert mode — it will never prompt, because it never tries.
-      </p>
-    </section>
+    <h2>What it does</h2><div class="rule"></div>
+    <div class="grid">
+      <div class="ve-card">
+        <h3>Edge-aware scanning</h3>
+        <p>Apple's Vision document camera — the engine Notes uses. Auto edge-detection, perspective correction, shadow cleanup. Import from Photos or Files too.</p>
+      </div>
+      <div class="ve-card">
+        <h3>On-device OCR</h3>
+        <p>Every scan is run through text recognition and the words are embedded as an invisible PDF layer — searchable here, and in any other reader.</p>
+      </div>
+      <div class="ve-card">
+        <h3>Full-text search</h3>
+        <p>Search across every scan, or inside one. By name or by content. Tap a result to jump to that page with the match highlighted.</p>
+      </div>
+      <div class="ve-card">
+        <span class="tag">AI</span>
+        <h3>Analyze with on-device AI</h3>
+        <p>Open any scan for an AI summary, key points, and a follow-up Q&amp;A — powered by Apple Intelligence on your iPhone's Neural Engine. Streams in seconds.</p>
+      </div>
+      <div class="ve-card">
+        <span class="tag">AI</span>
+        <h3>Ask across your library</h3>
+        <p>Ask a question in plain language and get an answer pulled from every scan, with tappable citations back to the source page. Ranked by meaning, not keywords.</p>
+      </div>
+      <div class="ve-card">
+        <h3>Page editor</h3>
+        <p>Reorder, rotate, or delete pages after the fact. Changes save back to the original PDF with the OCR layer intact.</p>
+      </div>
+      <div class="ve-card">
+        <h3>Password-protected export</h3>
+        <p>Export a sensitive scan with PDFKit encryption. The recipient needs the password to open it; Paperix never stores or transmits it.</p>
+      </div>
+      <div class="ve-card">
+        <h3>Zero networking</h3>
+        <p>The binary has no code to phone home. Turn airplane mode on forever and Paperix works exactly the same. Not "encrypted in transit" — <em>no transit</em>.</p>
+      </div>
+    </div>
 
-    <hr>
+    <h2>Every screen, on device</h2><div class="rule"></div>
+    <div class="shotrow">
+      <figure class="shot-fig">
+        <div class="device"><img src="assets/shots/document.png" alt="A scanned lease open in Paperix, marked searchable" width="402" height="874" loading="lazy"></div>
+        <figcaption>Read &amp; act</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <div class="device"><img src="assets/shots/search.png" alt="Full-text search results with highlighted matches across five scans" width="402" height="874" loading="lazy"></div>
+        <figcaption>Search the contents</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <div class="device"><img src="assets/shots/analyze.png" alt="An on-device AI summary of a lease agreement" width="402" height="874" loading="lazy"></div>
+        <figcaption>Analyze with AI</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <div class="device"><img src="assets/shots/pages.png" alt="The page editor showing three pages to reorder, rotate, or delete" width="402" height="874" loading="lazy"></div>
+        <figcaption>Edit pages</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <div class="device"><img src="assets/shots/lock.png" alt="The password-protected export sheet" width="402" height="874" loading="lazy"></div>
+        <figcaption>Lock before sharing</figcaption>
+      </figure>
+      <figure class="shot-fig">
+        <div class="device"><img src="assets/shots/library-dark.png" alt="The Paperix library in dark mode" width="402" height="874" loading="lazy"></div>
+        <figcaption>Light &amp; dark</figcaption>
+      </figure>
+    </div>
 
-    <section id="get">
-      <h2>Get Paperix</h2>
+    <h2>Why no SDKs?</h2><div class="rule"></div>
+    <p>
+      Most "free" scanner apps make money by sending your scans, your text, your
+      behavior, or your contacts somewhere. The business model is: you upload your
+      tax documents and someone downstream gets paid.
+    </p>
+    <p>
+      Paperix takes a different approach. It's a one-time purchase, it has no
+      servers, and it has no third-party SDKs — not analytics, not crash
+      reporters, not advertising IDs. The binary you install is the binary that
+      runs. There is no live wire back to anyone.
+    </p>
+    <div class="privacyband">
+      <span class="dot" aria-hidden="true"></span>
       <p>
-        Paperix is on the App Store — a one-time purchase, no subscription,
-        no accounts. It runs on iPhone and iPad.
+        <strong>This is easy to claim and hard to prove — so prove it.</strong>
+        Run Paperix with Little Snitch or Lulu in alert mode. It will never
+        prompt, because it never tries to connect. The same goes for the AI:
+        every summary, key point, and answer is generated on the Neural Engine
+        and stamped <em>“on device — nothing was sent to a server.”</em>
       </p>
-      <p>
-        <a class="appstore-badge" href="https://apps.apple.com/app/id6770402925" aria-label="Download Paperix on the App Store">
-          <svg class="apple-logo" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-          <span class="appstore-badge-text"><small>Download on the</small>App&nbsp;Store</span>
-        </a>
-      </p>
-      <p class="muted small">
-        On an iPhone or iPad? A native install banner appears at the top of
-        this page in Safari — tap it to open Paperix directly in the App Store.
-      </p>
-    </section>
+    </div>
+
+    <h2>Get Paperix</h2><div class="rule"></div>
+    <p>
+      Paperix is on the App Store — a one-time purchase, no subscription, no
+      accounts. It runs on iPhone and iPad. AI features need Apple Intelligence
+      (iPhone&nbsp;15&nbsp;Pro and later, or an M-series iPad); everything else
+      works on iOS&nbsp;16+.
+    </p>
+    <div class="cta-row">
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6770402925" aria-label="Download Paperix on the App Store">
+        <svg class="apple-logo" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span class="appstore-badge-text"><small>Download on the</small>App&nbsp;Store</span>
+      </a>
+    </div>
+    <p class="mono banner-note">On an iPhone or iPad? A native install banner appears at the top of this page in Safari.</p>
   </main>
 
   <footer class="site">
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="support.html">Support</a>
-    <br>
-    <span class="small">© 2026 Abhijit Bansal</span>
+    <span><a href="features.html">Features</a> · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></span>
+    <span>© 2026 Abhijit Bansal</span>
   </footer>
+
+</div>
 </body>
 </html>

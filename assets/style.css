@@ -1,238 +1,186 @@
-:root {
-  --bg: #ffffff;
-  --fg: #111418;
-  --muted: #5e6470;
-  --line: #e6e8ec;
-  --accent: #2477ee;
-  --accent-dark: #1556b8;
-  --card: #f7f8fa;
-  --max: 720px;
-}
+/* Paperix site theme — "Paper, Ink & Privacy".
+   Mirrors the app's own design system (Paperix/Theme.swift): warm cream
+   surfaces, deep warm-black ink, a single notary-red accent. Self-hosted
+   fonts (latin subsets, taken from the app's own bundled faces) — no
+   third-party requests, because the whole pitch is that nothing leaves
+   your device. Shared by index / features / privacy / support. */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e1116;
-    --fg: #e8eaee;
-    --muted: #9ba1ac;
-    --line: #232830;
-    --accent: #5ea1ff;
-    --accent-dark: #2477ee;
-    --card: #161b22;
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-regular.woff2) format('woff2')}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-italic.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:380 680;font-display:swap;src:url(fonts/inter-tight.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-regular.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jetbrains-mono-semibold.woff2) format('woff2')}
+
+:root{
+  --bg:#f4efe6;
+  --surface:#fcfaf4;
+  --surface-2:#ede6d5;
+  --border:rgba(22,20,15,.12);
+  --border-strong:rgba(22,20,15,.26);
+  --line:#e0d8c6;
+  --text:#16140f;
+  --text2:#3a352b;
+  --text-dim:#5e574a;
+  --text3:#7a7160;
+  --text4:#b7ae9c;
+  --stamp:#c5443a;
+  --stamp-deep:#a2362e;
+  --amber:#f0cf6a;
+  --amber-mark:rgba(240,207,106,.42);
+  --font-display:'Instrument Serif',Georgia,serif;
+  --font-body:'Inter Tight',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1b1814;
+    --surface:#24201a;
+    --surface-2:#2e2820;
+    --border:rgba(240,234,214,.13);
+    --border-strong:rgba(240,234,214,.3);
+    --line:#2f2920;
+    --text:#f0ead6;
+    --text2:#c5bba1;
+    --text-dim:#9a8f79;
+    --text3:#8b8270;
+    --text4:#5a5142;
+    --stamp:#e36a5e;
+    --stamp-deep:#bf4c40;
+    --amber:#e6bf5a;
+    --amber-mark:rgba(230,191,90,.3);
   }
 }
 
-* { box-sizing: border-box; }
+*{box-sizing:border-box;margin:0;min-width:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--font-body);font-size:17px;line-height:1.6;
+  padding:46px 24px 90px;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+.wrap{max-width:1080px;margin:0 auto}
+main.prose{max-width:740px}
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
-  font-size: 17px;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* ---- Top navigation ---- */
+nav.site{font-family:var(--font-mono);font-size:12px;margin-bottom:30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+nav.site img{width:27px;height:27px;border-radius:7px}
+nav.site .name{font-family:var(--font-display);font-size:19px;letter-spacing:.01em;color:var(--text);margin-right:auto}
+nav.site a{color:var(--text-dim);text-decoration:none}
+nav.site a:hover{color:var(--text)}
+nav.site a[aria-current="page"]{color:var(--stamp)}
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-a:hover { border-bottom-color: var(--accent); }
+/* ---- Page header / hero ---- */
+header.page{max-width:760px}
+.kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--stamp);font-weight:600}
+h1{font-family:var(--font-display);font-size:clamp(40px,6.4vw,66px);font-weight:400;line-height:1.03;letter-spacing:.005em;margin:12px 0 16px}
+h1 em{font-style:italic;color:var(--text2)}
+.lead{font-size:19px;color:var(--text2);max-width:600px}
+.lead b{color:var(--text);font-weight:600}
 
-main {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 56px 24px 96px;
-}
+/* On-device pill — echoes the app's badge */
+.ondevice{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin-bottom:18px}
+.ondevice::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--stamp)}
 
-header.site {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 24px;
-  border-bottom: 1px solid var(--line);
-  max-width: var(--max);
-  margin: 0 auto;
-}
-header.site img { width: 32px; height: 32px; border-radius: 7px; }
-header.site .name { font-weight: 600; font-size: 17px; }
-header.site nav { margin-left: auto; display: flex; gap: 20px; font-size: 15px; }
-header.site nav a { color: var(--muted); border: none; }
-header.site nav a:hover { color: var(--fg); }
-header.site nav a[aria-current="page"] { color: var(--fg); font-weight: 500; }
-
-.hero {
-  text-align: center;
-  padding: 48px 0 32px;
-}
-.hero img.icon {
-  width: 112px;
-  height: 112px;
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(36, 119, 238, 0.28);
-  margin-bottom: 24px;
-}
-.hero h1 {
-  font-size: 44px;
-  line-height: 1.1;
-  margin: 0 0 12px;
-  letter-spacing: -0.02em;
-}
-.hero .tagline {
-  font-size: 21px;
-  color: var(--muted);
-  margin: 0 auto;
-  max-width: 540px;
+/* Split hero: copy + device */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;margin:6px 0 10px}
+.hero-copy{min-width:0}
+.hero-art{display:flex;justify-content:center}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:26px}
+  .hero-art{order:-1}
 }
 
-h1, h2, h3 { letter-spacing: -0.01em; }
-h2 {
-  font-size: 24px;
-  margin-top: 48px;
-  margin-bottom: 12px;
-}
-h3 {
-  font-size: 18px;
-  margin-top: 28px;
-  margin-bottom: 6px;
+/* ---- Buttons / CTAs ---- */
+.cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:26px}
+.cta{display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:13px;font-weight:600;color:#fff;background:var(--stamp);padding:11px 18px;border-radius:7px;text-decoration:none}
+.cta:hover{background:var(--stamp-deep)}
+.cta-quiet{display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:13px;color:var(--text2);border:1px solid var(--border-strong);padding:10px 18px;border-radius:7px;text-decoration:none}
+.cta-quiet:hover{border-color:var(--stamp);color:var(--stamp)}
+
+/* App Store badge — black pill (light) / white pill (dark), per Apple guidance */
+.appstore-badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;border:1px solid #000;border-radius:11px;padding:8px 17px 8px 15px;line-height:1;text-decoration:none}
+.appstore-badge:hover{background:#1a1a1a;border-color:#1a1a1a}
+.appstore-badge .apple-logo{width:20px;height:25px;flex:none}
+.appstore-badge-text{display:flex;flex-direction:column;align-items:flex-start;font-family:var(--font-body);font-weight:600;font-size:18px;letter-spacing:-.01em}
+.appstore-badge-text small{font-weight:400;font-size:10.5px;letter-spacing:.02em;opacity:.92}
+@media (prefers-color-scheme: dark){
+  .appstore-badge{background:#fff;color:#000;border-color:#fff}
+  .appstore-badge:hover{background:#e8e8e8;border-color:#e8e8e8}
 }
 
-p { margin: 14px 0; }
+/* ---- Section headings with stamp-accented rule ---- */
+h2{font-family:var(--font-display);font-size:31px;font-weight:400;margin:50px 0 4px;letter-spacing:.005em}
+.rule{height:1px;background:var(--border-strong);margin:7px 0 20px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:60px;height:3px;background:var(--stamp)}
+h3{font-size:17px;font-weight:600;margin:24px 0 6px}
 
-.lead {
-  font-size: 19px;
-  color: var(--muted);
-}
+/* ---- Prose ---- */
+p{margin:0 0 15px}
+main p a,main li a{color:var(--stamp);text-decoration:none;border-bottom:1px solid rgba(197,68,58,.28)}
+main p a:hover,main li a:hover{border-bottom-color:var(--stamp)}
+ul,ol{padding-left:22px;margin:0 0 15px}
+li{margin-bottom:7px}
+code{font-family:var(--font-mono);font-size:13px;background:var(--surface-2);padding:1px 6px;border-radius:4px;color:var(--text)}
+.muted{color:var(--text-dim)}
+.small{font-size:14px}
+.mono{font-family:var(--font-mono);font-size:12px;letter-spacing:.02em;color:var(--text3)}
+.lede{font-size:19px;color:var(--text2)}
+mark{background:var(--amber-mark);color:inherit;padding:0 2px;border-radius:2px}
 
-ul, ol { padding-left: 22px; }
-li { margin: 6px 0; }
+/* ---- Card grid ---- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:13px}
+.ve-card{border:1px solid var(--border);background:var(--surface);padding:16px 18px;border-radius:6px;position:relative}
+.ve-card h3{font-size:16px;font-weight:600;margin:0 0 5px;padding-right:50px}
+.ve-card p{font-size:14px;color:var(--text2);margin:0;line-height:1.5}
+.tag{position:absolute;top:15px;right:15px;font-family:var(--font-mono);font-size:9.5px;font-weight:600;letter-spacing:.1em;background:var(--stamp);color:#fff;padding:2px 7px;border-radius:3px;text-transform:uppercase}
+@media (prefers-color-scheme: dark){.tag{color:var(--bg)}}
+.how{margin-top:9px;font-family:var(--font-mono);font-size:11px;color:var(--text3);line-height:1.5}
 
-hr {
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 40px 0;
-}
+/* ---- Device frame (screenshots + GIFs) ---- */
+.device{border-radius:30px;overflow:hidden;border:1px solid var(--border-strong);background:var(--text);box-shadow:0 18px 50px rgba(22,20,15,.18),0 3px 10px rgba(22,20,15,.10);position:relative}
+@media (prefers-color-scheme: dark){.device{box-shadow:0 18px 50px rgba(0,0,0,.5)}}
+.device img{width:100%;display:block}
+.hero-art .device{width:min(252px,68vw)}
 
-.features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 32px 0 0;
-}
-.feature {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 20px;
-}
-.feature h3 { margin-top: 0; }
-.feature p { color: var(--muted); margin: 6px 0 0; font-size: 15px; }
+/* Demo GIF + screenshot rows */
+.demorow{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin:30px 0 8px}
+.demo-fig{width:min(232px,72vw);margin:0}
+.demo-fig .device{border-radius:28px}
+.demo-fig figcaption{font-family:var(--font-mono);font-size:11px;color:var(--text3);margin-top:11px;line-height:1.45;text-align:center}
+.demo-fig figcaption b{color:var(--stamp);font-weight:600}
+.gifnote{font-family:var(--font-mono);font-size:11px;color:var(--text3);margin:14px 0 6px;text-align:center}
+.banner-note{margin-top:16px}
 
-@media (max-width: 600px) {
-  .features { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 34px; }
-  .hero .tagline { font-size: 18px; }
-}
+/* Screenshot gallery (smaller, denser) */
+.shotrow{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin:28px 0 6px}
+.shot-fig{width:min(196px,42vw);margin:0}
+.shot-fig .device{border-radius:24px}
+.shot-fig figcaption{font-family:var(--font-mono);font-size:10.5px;color:var(--text3);margin-top:9px;line-height:1.4;text-align:center}
 
-.cta {
-  display: inline-block;
-  background: var(--accent);
-  color: white;
-  padding: 12px 22px;
-  border-radius: 10px;
-  font-weight: 600;
-  margin-top: 24px;
-  border: none;
-}
-.cta:hover { background: var(--accent-dark); border: none; }
+/* ---- Privacy banner block ---- */
+.privacyband{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:18px 20px;margin:26px 0;display:flex;gap:14px;align-items:flex-start}
+.privacyband .dot{width:9px;height:9px;border-radius:50%;background:var(--stamp);flex:none;margin-top:7px}
+.privacyband p{margin:0;font-size:15px;color:var(--text2)}
+.privacyband strong{color:var(--text)}
 
-.cta-row {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 28px;
-}
-.cta-row .cta { margin-top: 0; }
+.callout{background:var(--surface);border-left:3px solid var(--stamp);border-radius:0 8px 8px 0;padding:14px 18px;margin:22px 0;font-size:15px;color:var(--text2)}
 
-.cta.secondary {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--line);
-}
-.cta.secondary:hover { background: var(--card); color: var(--accent); border: 1px solid var(--line); }
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-family:var(--font-mono);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text3)}
 
-/* App Store download badge — black pill on light, white pill on dark (Apple badge guidance). */
-.appstore-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #000;
-  color: #fff;
-  border: 1px solid #000;
-  border-radius: 12px;
-  padding: 9px 18px 9px 16px;
-  line-height: 1;
-}
-.appstore-badge:hover { background: #1a1a1a; border-color: #1a1a1a; }
-.appstore-badge .apple-logo { width: 21px; height: 26px; flex: none; }
-.appstore-badge-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-weight: 600;
-  font-size: 19px;
-  letter-spacing: -0.01em;
-}
-.appstore-badge-text small {
-  font-weight: 400;
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  opacity: 0.92;
-}
+/* ---- Footer ---- */
+footer.site{margin-top:58px;border-top:1px solid var(--border);padding-top:16px;font-family:var(--font-mono);font-size:11.5px;color:var(--text3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+footer.site a{color:inherit;text-decoration:none}
+footer.site a:hover{color:var(--text)}
 
-@media (prefers-color-scheme: dark) {
-  .appstore-badge { background: #fff; color: #000; border-color: #fff; }
-  .appstore-badge:hover { background: #e8e8e8; border-color: #e8e8e8; }
+@media (max-width:600px){
+  body{padding:34px 18px 72px}
+  h1{font-size:38px}
+  .lead{font-size:18px}
 }
-
-.muted { color: var(--muted); }
-.small { font-size: 14px; }
-
-footer.site {
-  border-top: 1px solid var(--line);
-  padding: 28px 24px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 14px;
-  max-width: var(--max);
-  margin: 0 auto;
+@media (prefers-reduced-motion: no-preference){
+  .ve-card,.demo-fig,.shot-fig{animation:rise .45s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 }
-footer.site a { color: var(--muted); border: none; margin: 0 12px; }
-footer.site a:hover { color: var(--fg); }
-
-.callout {
-  background: var(--card);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 8px 8px 0;
-  padding: 14px 18px;
-  margin: 24px 0;
-  font-size: 15px;
-}
-
-code, kbd {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  padding: 1px 6px;
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.92em;
-}
-
-table { border-collapse: collapse; width: 100%; margin: 16px 0; }
-th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
-th { font-weight: 600; color: var(--muted); font-size: 14px; }

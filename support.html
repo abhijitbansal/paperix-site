@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support — Paperix</title>
   <meta name="description" content="Paperix support — FAQs and how to get in touch.">
-  <meta name="theme-color" content="#2477ee">
+  <meta name="theme-color" content="#f4efe6">
 
   <!-- iOS Smart App Banner: native install banner shown only in Safari on iPhone/iPad. -->
   <meta name="apple-itunes-app" content="app-id=6770402925">
@@ -16,152 +16,155 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Paperix">
   <meta property="og:title" content="Support — Paperix">
-  <meta property="og:description" content="FAQs for Paperix, the private on-device document scanner — scanning, searching, editing, sharing, and how to get in touch.">
+  <meta property="og:description" content="FAQs for Paperix, the private on-device document scanner — scanning, searching, AI, editing, sharing, and how to get in touch.">
   <meta property="og:url" content="https://abhijitbansal.github.io/paperix-site/support.html">
   <meta property="og:image" content="https://abhijitbansal.github.io/paperix-site/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Paperix — private, on-device document scanner for iPhone and iPad.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Support — Paperix">
-  <meta name="twitter:description" content="FAQs for Paperix, the private on-device document scanner — scanning, searching, editing, sharing, and how to get in touch.">
   <meta name="twitter:image" content="https://abhijitbansal.github.io/paperix-site/assets/og-image.png">
 
   <link rel="icon" type="image/png" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; form-action 'none'; base-uri 'self'">
 </head>
 <body>
-  <header class="site">
+<div class="wrap">
+
+  <nav class="site">
     <img src="assets/app-icon-64.png" alt="">
     <span class="name">Paperix</span>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="support.html" aria-current="page">Support</a>
-    </nav>
-  </header>
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html" aria-current="page">Support</a>
+  </nav>
 
-  <main>
+  <header class="page">
+    <div class="kicker">Paperix · support</div>
     <h1>Support</h1>
     <p class="lead">
-      Most things you might want to know about Paperix are below. If yours
-      isn't here, email
+      Most things you might want to know are below. If yours isn't here, email
       <a href="mailto:contact@abhijitbansal.com">contact@abhijitbansal.com</a>.
     </p>
+  </header>
 
-    <h2>Getting started</h2>
+  <main class="prose">
 
+    <h2>Getting started</h2><div class="rule"></div>
     <h3>How do I scan a document?</h3>
     <p>
-      Tap the <strong>scan</strong> button (top right of the document list).
-      Frame each page in the viewfinder — Paperix uses Apple's Vision
-      document camera, which auto-detects the edges of paper, corrects
-      perspective, and removes shadows. Tap shutter for each page; tap
-      <strong>Save</strong> when you're done. Paperix combines the pages
-      into one searchable PDF.
+      Tap the <strong>+</strong> button (top right of the library). Frame each
+      page in the viewfinder — Paperix uses Apple's Vision document camera, which
+      auto-detects the edges of paper, corrects perspective, and removes shadows.
+      Tap the shutter for each page; tap <strong>Save</strong> when you're done.
+      Paperix combines the pages into one searchable PDF. You can also import
+      from Photos or Files.
     </p>
-
     <h3>Where are my scans stored?</h3>
     <p>
       In the app's Documents folder, accessible via the <strong>Files</strong>
-      app under "On My iPhone / Paperix / Scans". You can move them to
-      iCloud Drive, Dropbox, or anywhere else from Files.
+      app under "On My iPhone / Paperix / Scans". You can move them to iCloud
+      Drive, Dropbox, or anywhere else from Files.
     </p>
 
-    <h2>Searching</h2>
-
+    <h2>Searching</h2><div class="rule"></div>
     <h3>Are the PDFs really searchable?</h3>
     <p>
-      Yes. After each scan, Paperix runs on-device text recognition and
-      embeds the recognized text as an invisible layer in the PDF.
-      You can search:
+      Yes. After each scan, Paperix runs on-device text recognition and embeds
+      the recognized text as an invisible layer in the PDF. You can search:
     </p>
     <ul>
-      <li>Across all scans, from the document list's search bar</li>
-      <li>Inside a single scan, from the search bar inside the document view</li>
-      <li>In any other PDF reader (Preview, Acrobat, etc.) — the text layer is standard PDF text</li>
+      <li>Across all scans, from the library's search bar</li>
+      <li>Inside a single scan, from the search bar in the document view</li>
+      <li>In any other PDF reader — the text layer is standard PDF text</li>
     </ul>
-
     <h3>OCR missed some text. What can I do?</h3>
     <p>
-      Apple's Vision text recognition is good, but it isn't perfect on
-      handwriting, faint print, or unusual fonts. The image itself is
-      preserved at full resolution, so the document is still readable — only
-      the searchable text layer might miss some words. There's no manual
-      OCR correction in v0.1; if this comes up often, let us know.
+      Apple's Vision text recognition is good, but not perfect on handwriting,
+      faint print, or unusual fonts. The image itself is preserved at full
+      resolution, so the document is still readable — only the searchable text
+      layer might miss some words.
     </p>
 
-    <h2>Editing</h2>
+    <h2>On-device AI</h2><div class="rule"></div>
+    <h3>Where does the AI run?</h3>
+    <p>
+      Entirely on your device. Summaries, key points, the per-document Q&amp;A,
+      and "Ask Paperix" across your library all run on the Neural Engine using
+      Apple Intelligence. No document content, query, or answer is sent to a
+      server. AI features require Apple Intelligence (iPhone 15 Pro and later, or
+      an M-series iPad); on older devices they're hidden and the rest of Paperix
+      works the same.
+    </p>
+    <div class="callout">
+      Don't see the AI buttons? Your device may not support Apple Intelligence,
+      or it isn't enabled in <strong>Settings → Apple Intelligence &amp; Siri</strong>.
+    </div>
 
+    <h2>Editing</h2><div class="rule"></div>
     <h3>How do I edit pages after scanning?</h3>
     <p>
       Open a scan, tap <strong>⋯</strong>, choose <strong>Edit Pages</strong>.
-      You can reorder pages by dragging, rotate individual pages, and delete
-      pages. Tap <strong>Save</strong> to write changes back to the PDF.
+      Reorder by dragging, rotate individual pages, and delete pages. Tap
+      <strong>Save</strong> to write changes back to the PDF — the OCR layer is
+      preserved.
     </p>
-
     <h3>How do I rename a scan?</h3>
     <p>
       From the document view, tap <strong>⋯</strong> → <strong>Rename</strong>.
       Or from the list, swipe a row to reveal the actions.
     </p>
 
-    <h2>Sharing</h2>
-
+    <h2>Sharing</h2><div class="rule"></div>
     <h3>How do I export a password-protected PDF?</h3>
     <p>
-      Open a scan, tap <strong>⋯</strong>, choose
-      <strong>Export with Password</strong>. Enter and confirm a password,
-      then share the protected file via the system share sheet. The
-      original (unprotected) scan stays in Paperix; only the exported copy
-      is password-protected.
+      Open a scan, tap <strong>⋯</strong>, choose <strong>Export with
+      Password</strong>. Enter and confirm a password, then share the protected
+      file via the system share sheet. The original (unprotected) scan stays in
+      Paperix; only the exported copy is password-protected.
     </p>
     <div class="callout">
-      Passwords aren't recoverable. Store yours somewhere safe — a password
-      manager, ideally.
+      Passwords aren't recoverable. Paperix never stores or transmits them —
+      store yours somewhere safe, a password manager ideally.
     </div>
 
-    <h2>Privacy</h2>
-
+    <h2>Privacy</h2><div class="rule"></div>
     <h3>Does Paperix upload my scans anywhere?</h3>
     <p>
-      No. Paperix has no network code. Nothing leaves your device unless
-      you explicitly share it through the system share sheet. See the
-      <a href="privacy.html">privacy policy</a> for the full details.
+      No. Paperix has no network code. Nothing leaves your device unless you
+      explicitly share it through the system share sheet, or turn on the opt-in
+      iCloud sync (which routes through your own Apple iCloud, never a Paperix
+      server). See the <a href="privacy.html">privacy policy</a> for the full
+      details.
     </p>
-
     <h3>Are there ads or trackers?</h3>
     <p>No third-party SDKs of any kind. No advertising IDs are accessed.</p>
 
-    <h2>Troubleshooting</h2>
-
+    <h2>Troubleshooting</h2><div class="rule"></div>
     <h3>The scan button is greyed out</h3>
     <p>
-      The scan button is disabled if your device doesn't have a camera or
-      doesn't support the Vision document scanner (a small number of older
-      iPads). Check that camera access for Paperix is enabled in
+      The scanner is disabled if your device doesn't have a camera or doesn't
+      support the Vision document scanner (a small number of older iPads). Check
+      that camera access for Paperix is enabled in
       <strong>Settings → Paperix</strong>.
     </p>
-
     <h3>A scan came out blurry or misaligned</h3>
-    <p>
-      The Vision document camera works best with:
-    </p>
+    <p>The Vision document camera works best with:</p>
     <ul>
       <li>Even lighting (no harsh shadows from above)</li>
       <li>Dark text on a light background</li>
       <li>The document filling most of the viewfinder</li>
       <li>Holding the phone roughly perpendicular to the page</li>
     </ul>
-    <p>
-      You can also tap to focus during scanning.
-    </p>
+    <p>You can also tap to focus during scanning.</p>
 
-    <h2>Contact</h2>
-    <p>
-      <a href="mailto:contact@abhijitbansal.com">contact@abhijitbansal.com</a>
-    </p>
+    <h2>Contact</h2><div class="rule"></div>
+    <p><a href="mailto:contact@abhijitbansal.com">contact@abhijitbansal.com</a></p>
     <p>Please include:</p>
     <ul>
       <li>iOS version</li>
@@ -169,19 +172,18 @@
       <li>What you were doing when the issue happened</li>
     </ul>
 
-    <h2>Acknowledgements</h2>
+    <h2>Acknowledgements</h2><div class="rule"></div>
     <p>
-      Paperix is built on Apple's own frameworks — VisionKit, Vision,
-      PDFKit, SwiftUI. No third-party libraries.
+      Paperix is built on Apple's own frameworks — VisionKit, Vision, PDFKit,
+      SwiftUI, Foundation Models, and Natural Language. No third-party libraries.
     </p>
   </main>
 
   <footer class="site">
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="support.html">Support</a>
-    <br>
-    <span class="small">© 2026 Abhijit Bansal</span>
+    <span><a href="index.html">Home</a> · <a href="features.html">Features</a> · <a href="privacy.html">Privacy</a></span>
+    <span>© 2026 Abhijit Bansal</span>
   </footer>
+
+</div>
 </body>
 </html>
