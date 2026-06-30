@@ -149,6 +149,57 @@ hr {
 }
 .cta:hover { background: var(--accent-dark); border: none; }
 
+.cta-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.cta-row .cta { margin-top: 0; }
+
+.cta.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--line);
+}
+.cta.secondary:hover { background: var(--card); color: var(--accent); border: 1px solid var(--line); }
+
+/* App Store download badge — black pill on light, white pill on dark (Apple badge guidance). */
+.appstore-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 9px 18px 9px 16px;
+  line-height: 1;
+}
+.appstore-badge:hover { background: #1a1a1a; border-color: #1a1a1a; }
+.appstore-badge .apple-logo { width: 21px; height: 26px; flex: none; }
+.appstore-badge-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+.appstore-badge-text small {
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  opacity: 0.92;
+}
+
+@media (prefers-color-scheme: dark) {
+  .appstore-badge { background: #fff; color: #000; border-color: #fff; }
+  .appstore-badge:hover { background: #e8e8e8; border-color: #e8e8e8; }
+}
+
 .muted { color: var(--muted); }
 .small { font-size: 14px; }
 

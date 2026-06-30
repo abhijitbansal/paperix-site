@@ -5,10 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Paperix — Private offline document scanner for iPhone</title>
   <meta name="description" content="Paperix is a private, on-device document scanner for iPhone. Scan to searchable PDFs and ask AI questions about them — all on your device. No cloud, no accounts, no tracking.">
+  <meta name="theme-color" content="#2477ee">
+
+  <!-- iOS Smart App Banner: native "install" banner shown only in Safari on iPhone/iPad. -->
+  <meta name="apple-itunes-app" content="app-id=6770402925">
+
+  <link rel="canonical" href="https://abhijitbansal.github.io/paperix-site/">
+
+  <!-- Open Graph / link unfurl. ABSOLUTE URLs are mandatory: Teams/Slack/iMessage crawlers
+       cannot resolve relative og:image paths, and the large-image card is what makes Teams
+       upgrade a bare URL to a titled link. og:image dimensions must match the real file. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Paperix">
   <meta property="og:title" content="Paperix — Private AI document scanner">
   <meta property="og:description" content="Scan to searchable PDFs and ask AI questions about them — all on your iPhone. Nothing leaves your device.">
-  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:url" content="https://abhijitbansal.github.io/paperix-site/">
+  <meta property="og:image" content="https://abhijitbansal.github.io/paperix-site/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Paperix — private, on-device document scanner for iPhone and iPad.">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paperix — Private AI document scanner">
+  <meta name="twitter:description" content="Scan to searchable PDFs and ask AI questions about them — all on your iPhone. Nothing leaves your device.">
+  <meta name="twitter:image" content="https://abhijitbansal.github.io/paperix-site/assets/og-image.png">
+
   <link rel="icon" type="image/png" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
@@ -33,7 +53,13 @@
         any scan or ask questions across your whole library — every step of
         it on-device. No accounts, no cloud, no analytics, no tracking.
       </p>
-      <a class="cta" href="#features">See what it does</a>
+      <div class="cta-row">
+        <a class="appstore-badge" href="https://apps.apple.com/app/id6770402925" aria-label="Download Paperix on the App Store">
+          <svg class="apple-logo" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="appstore-badge-text"><small>Download on the</small>App&nbsp;Store</span>
+        </a>
+        <a class="cta secondary" href="#features">See what it does</a>
+      </div>
     </section>
 
     <hr>
@@ -100,13 +126,21 @@
 
     <hr>
 
-    <section>
+    <section id="get">
       <h2>Get Paperix</h2>
       <p>
-        Coming soon to the App Store. In the meantime, the source is on
-        <a href="https://github.com/abhijitbansal/doc-scan">GitHub</a>
-        (with a free Apple ID you can build and run it on your own iPhone
-        today).
+        Paperix is on the App Store — a one-time purchase, no subscription,
+        no accounts. It runs on iPhone and iPad.
+      </p>
+      <p>
+        <a class="appstore-badge" href="https://apps.apple.com/app/id6770402925" aria-label="Download Paperix on the App Store">
+          <svg class="apple-logo" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="appstore-badge-text"><small>Download on the</small>App&nbsp;Store</span>
+        </a>
+      </p>
+      <p class="muted small">
+        On an iPhone or iPad? A native install banner appears at the top of
+        this page in Safari — tap it to open Paperix directly in the App Store.
       </p>
     </section>
   </main>
