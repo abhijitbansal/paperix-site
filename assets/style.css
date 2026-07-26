@@ -27,6 +27,14 @@
   --stamp-deep:#a2362e;
   --amber:#f0cf6a;
   --amber-mark:rgba(240,207,106,.42);
+  /* Hover/press support tokens. --stamp-soft is a literal rgba (not color-mix)
+     so a parse failure can never fall the border back to currentColor ink.
+     --card-shadow is tinted with the warm ink, never neutral black. */
+  --stamp-soft:rgba(197,68,58,.45);
+  --card-shadow:rgba(22,20,15,.10);
+  /* One easing token. Critically damped, no overshoot — a hover or a press
+     carries no momentum, so bounce would be wrong (Apple: damping 1.0). */
+  --ease-out:cubic-bezier(.32,.72,0,1);
   --font-display:'Instrument Serif',Georgia,serif;
   --font-body:'Inter Tight',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
@@ -48,6 +56,8 @@
     --stamp-deep:#bf4c40;
     --amber:#e6bf5a;
     --amber-mark:rgba(230,191,90,.3);
+    --stamp-soft:rgba(227,106,94,.5);
+    --card-shadow:rgba(8,6,3,.5);
   }
 }
 
@@ -62,13 +72,32 @@ body{
 .wrap{max-width:1080px;margin:0 auto}
 main.prose{max-width:740px}
 
+/* Keyboard affordance. One rule covers every link on every page — the site has
+   no buttons or form controls. Deliberately no border-radius here: browsers
+   already round the outline to the element's own radius, and setting one would
+   change the element's actual shape. --stamp is theme-aware, so this reads in
+   both light and dark. */
+a:focus-visible{outline:2px solid var(--stamp);outline-offset:3px}
+/* Background only, no colour override: ::selection is global, and forcing
+   --text would put page ink on the .tag badge (white on stamp) and on the
+   App Store badge (which inverts per theme). Leaving colour alone keeps each
+   element's own contrast. */
+::selection{background:var(--amber-mark)}
+
+/* Type: let the browser avoid orphans. h1 is left out on purpose — both h1s
+   use hand-placed <br>s and balancing would fight the author's line breaks. */
+h2,h3,figcaption{text-wrap:balance}
+p{text-wrap:pretty}
+
 /* ---- Top navigation ---- */
 nav.site{font-family:var(--font-mono);font-size:12px;margin-bottom:30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 nav.site img{width:27px;height:27px;border-radius:7px}
 nav.site .name{font-family:var(--font-display);font-size:19px;letter-spacing:.01em;color:var(--text);margin-right:auto}
-nav.site a{color:var(--text-dim);text-decoration:none}
+nav.site a{color:var(--text-dim);text-decoration:none;transition:color .16s var(--ease-out)}
 nav.site a:hover{color:var(--text)}
-nav.site a[aria-current="page"]{color:var(--stamp)}
+/* Current page carried by colour alone was the only cue — add an underline so
+   it survives a colour-blind or high-contrast reading. */
+nav.site a[aria-current="page"]{color:var(--stamp);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
 
 /* ---- Page header / hero ---- */
 header.page{max-width:760px}
@@ -93,13 +122,16 @@ h1 em{font-style:italic;color:var(--text2)}
 
 /* ---- Buttons / CTAs ---- */
 .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:26px}
-.cta{display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:13px;font-weight:600;color:#fff;background:var(--stamp);padding:11px 18px;border-radius:7px;text-decoration:none}
+/* Transitions are declared unconditionally; the transform *values* only ever
+   change inside the prefers-reduced-motion block at the bottom, so a
+   reduced-motion visitor gets the colour shift and never a moving element. */
+.cta{display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:13px;font-weight:600;color:#fff;background:var(--stamp);padding:11px 18px;border-radius:7px;text-decoration:none;transition:background-color .16s var(--ease-out),transform .12s var(--ease-out)}
 .cta:hover{background:var(--stamp-deep)}
-.cta-quiet{display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:13px;color:var(--text2);border:1px solid var(--border-strong);padding:10px 18px;border-radius:7px;text-decoration:none}
+.cta-quiet{display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:13px;color:var(--text2);border:1px solid var(--border-strong);padding:10px 18px;border-radius:7px;text-decoration:none;transition:border-color .16s var(--ease-out),color .16s var(--ease-out),transform .12s var(--ease-out)}
 .cta-quiet:hover{border-color:var(--stamp);color:var(--stamp)}
 
 /* App Store badge — black pill (light) / white pill (dark), per Apple guidance */
-.appstore-badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;border:1px solid #000;border-radius:11px;padding:8px 17px 8px 15px;line-height:1;text-decoration:none}
+.appstore-badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;border:1px solid #000;border-radius:11px;padding:8px 17px 8px 15px;line-height:1;text-decoration:none;transition:background-color .16s var(--ease-out),border-color .16s var(--ease-out),transform .12s var(--ease-out)}
 .appstore-badge:hover{background:#1a1a1a;border-color:#1a1a1a}
 .appstore-badge .apple-logo{width:20px;height:25px;flex:none}
 .appstore-badge-text{display:flex;flex-direction:column;align-items:flex-start;font-family:var(--font-body);font-weight:600;font-size:18px;letter-spacing:-.01em}
@@ -117,8 +149,12 @@ h3{font-size:17px;font-weight:600;margin:24px 0 6px}
 
 /* ---- Prose ---- */
 p{margin:0 0 15px}
-main p a,main li a{color:var(--stamp);text-decoration:none;border-bottom:1px solid rgba(197,68,58,.28)}
-main p a:hover,main li a:hover{border-bottom-color:var(--stamp)}
+/* Scoped to p/li rather than `main p` because features.html has no <main> and
+   support.html's mailto sits in header.page — both were rendering as default
+   browser blue, which is near-unreadable on the dark surface. Nav, footer and
+   CTA links live in spans/divs, so they are untouched by this. */
+p a,li a{color:var(--stamp);text-decoration:none;border-bottom:1px solid rgba(197,68,58,.28);border-bottom-color:color-mix(in srgb,var(--stamp) 32%,transparent);transition:color .16s var(--ease-out),border-color .16s var(--ease-out)}
+p a:hover,li a:hover{border-bottom-color:var(--stamp)}
 ul,ol{padding-left:22px;margin:0 0 15px}
 li{margin-bottom:7px}
 code{font-family:var(--font-mono);font-size:13px;background:var(--surface-2);padding:1px 6px;border-radius:4px;color:var(--text)}
@@ -130,7 +166,11 @@ mark{background:var(--amber-mark);color:inherit;padding:0 2px;border-radius:2px}
 
 /* ---- Card grid ---- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:13px}
-.ve-card{border:1px solid var(--border);background:var(--surface);padding:16px 18px;border-radius:6px;position:relative}
+/* Cards sit flat at rest — the warm-paper look depends on it. They only lift
+   on hover, and the shadow is tinted with the page's own ink rather than
+   neutral black, so it reads as paper on paper in both themes. */
+.ve-card{border:1px solid var(--border);background:var(--surface);padding:16px 18px;border-radius:6px;position:relative;transition:border-color .2s var(--ease-out),box-shadow .2s var(--ease-out),transform .2s var(--ease-out)}
+.ve-card:hover{border-color:var(--stamp-soft);box-shadow:0 6px 20px var(--card-shadow)}
 .ve-card h3{font-size:16px;font-weight:600;margin:0 0 5px;padding-right:50px}
 .ve-card p{font-size:14px;color:var(--text2);margin:0;line-height:1.5}
 .tag{position:absolute;top:15px;right:15px;font-family:var(--font-mono);font-size:9.5px;font-weight:600;letter-spacing:.1em;background:var(--stamp);color:#fff;padding:2px 7px;border-radius:3px;text-transform:uppercase}
@@ -164,7 +204,10 @@ mark{background:var(--amber-mark);color:inherit;padding:0 2px;border-radius:2px}
 .privacyband p{margin:0;font-size:15px;color:var(--text2)}
 .privacyband strong{color:var(--text)}
 
-.callout{background:var(--surface);border-left:3px solid var(--stamp);border-radius:0 8px 8px 0;padding:14px 18px;margin:22px 0;font-size:15px;color:var(--text2)}
+/* Same dot-accent language as .privacyband, not a border-left tab — one
+   accent device for "here's a callout" instead of two competing ones. */
+.callout{background:var(--surface);border-radius:8px;padding:14px 18px;margin:22px 0;font-size:15px;color:var(--text2);display:flex;gap:12px;align-items:flex-start}
+.callout::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--stamp);flex:none;margin-top:6px}
 
 table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15px}
 th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
@@ -172,7 +215,7 @@ th{font-family:var(--font-mono);font-weight:600;font-size:11px;letter-spacing:.0
 
 /* ---- Footer ---- */
 footer.site{margin-top:58px;border-top:1px solid var(--border);padding-top:16px;font-family:var(--font-mono);font-size:11.5px;color:var(--text3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-footer.site a{color:inherit;text-decoration:none}
+footer.site a{color:inherit;text-decoration:none;transition:color .16s var(--ease-out)}
 footer.site a:hover{color:var(--text)}
 
 @media (max-width:600px){
@@ -181,6 +224,29 @@ footer.site a:hover{color:var(--text)}
   .lead{font-size:18px}
 }
 @media (prefers-reduced-motion: no-preference){
-  .ve-card,.demo-fig,.shot-fig{animation:rise .45s ease both}
-  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  /* fill-mode is `backwards`, NOT `both`. `both` keeps the final keyframe
+     (transform:none) applied forever after the animation ends, which silently
+     beats the hover lift below. `backwards` still holds the from-state through
+     the delay window, so nothing flashes in before its turn. */
+  .ve-card,.demo-fig,.shot-fig{animation:rise .45s var(--ease-out) backwards}
+  @keyframes rise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+
+  /* CSS-only stagger — no JS is allowed here, so the cascade is hand-written.
+     :nth-child restarts inside every .grid / .demorow / .shotrow, so each
+     section reveals on its own rather than the whole page at once. 35ms step,
+     capped at 280ms of total spread: a reveal, not a page flash, and short
+     enough that no card is still waiting when the eye arrives. */
+  .ve-card:nth-child(2),.demo-fig:nth-child(2),.shot-fig:nth-child(2){animation-delay:35ms}
+  .ve-card:nth-child(3),.demo-fig:nth-child(3),.shot-fig:nth-child(3){animation-delay:70ms}
+  .ve-card:nth-child(4),.demo-fig:nth-child(4),.shot-fig:nth-child(4){animation-delay:105ms}
+  .ve-card:nth-child(5),.demo-fig:nth-child(5),.shot-fig:nth-child(5){animation-delay:140ms}
+  .ve-card:nth-child(6),.demo-fig:nth-child(6),.shot-fig:nth-child(6){animation-delay:175ms}
+  .ve-card:nth-child(7),.demo-fig:nth-child(7),.shot-fig:nth-child(7){animation-delay:210ms}
+  .ve-card:nth-child(8),.demo-fig:nth-child(8),.shot-fig:nth-child(8){animation-delay:245ms}
+  .ve-card:nth-child(n+9),.demo-fig:nth-child(n+9),.shot-fig:nth-child(n+9){animation-delay:280ms}
+
+  /* Every transform lives in this block, so a reduced-motion visitor keeps the
+     colour/border/shadow feedback and never sees anything move. */
+  .ve-card:hover{transform:translateY(-2px)}
+  .cta:active,.cta-quiet:active,.appstore-badge:active{transform:translateY(1px)}
 }
