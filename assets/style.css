@@ -5,11 +5,11 @@
    third-party requests, because the whole pitch is that nothing leaves
    your device. Shared by index / features / privacy / support. */
 
-@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-regular.woff2) format('woff2')}
-@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-italic.woff2) format('woff2')}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:380 680;font-display:swap;src:url(fonts/inter-tight.woff2) format('woff2')}
-@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-regular.woff2) format('woff2')}
-@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jetbrains-mono-semibold.woff2) format('woff2')}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/newsreader.woff2) format('woff2')}
+@font-face{font-family:'Newsreader';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/newsreader-italic.woff2) format('woff2')}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400 900;font-display:swap;src:url(fonts/schibsted-grotesk.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-regular.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/ibm-plex-mono-semibold.woff2) format('woff2')}
 
 :root{
   --bg:#f4efe6;
@@ -35,9 +35,9 @@
   /* One easing token. Critically damped, no overshoot — a hover or a press
      carries no momentum, so bounce would be wrong (Apple: damping 1.0). */
   --ease-out:cubic-bezier(.32,.72,0,1);
-  --font-display:'Instrument Serif',Georgia,serif;
-  --font-body:'Inter Tight',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-  --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --font-display:'Newsreader',Georgia,serif;
+  --font-body:'Schibsted Grotesk',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
 }
 @media (prefers-color-scheme: dark){
   :root{
@@ -102,7 +102,7 @@ nav.site a[aria-current="page"]{color:var(--stamp);text-decoration:underline;tex
 /* ---- Page header / hero ---- */
 header.page{max-width:760px}
 .kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--stamp);font-weight:600}
-h1{font-family:var(--font-display);font-size:clamp(40px,6.4vw,66px);font-weight:400;line-height:1.03;letter-spacing:.005em;margin:12px 0 16px}
+h1{font-family:var(--font-display);font-size:clamp(40px,6.4vw,66px);font-weight:400;line-height:1.04;letter-spacing:-.018em;margin:12px 0 16px}
 h1 em{font-style:italic;color:var(--text2)}
 .lead{font-size:19px;color:var(--text2);max-width:600px}
 .lead b{color:var(--text);font-weight:600}
@@ -142,7 +142,7 @@ h1 em{font-style:italic;color:var(--text2)}
 }
 
 /* ---- Section headings with stamp-accented rule ---- */
-h2{font-family:var(--font-display);font-size:31px;font-weight:400;margin:50px 0 4px;letter-spacing:.005em}
+h2{font-family:var(--font-display);font-size:31px;font-weight:400;margin:50px 0 4px;letter-spacing:-.01em}
 .rule{height:1px;background:var(--border-strong);margin:7px 0 20px;position:relative}
 .rule::before{content:"";position:absolute;left:0;top:-1px;width:60px;height:3px;background:var(--stamp)}
 h3{font-size:17px;font-weight:600;margin:24px 0 6px}
